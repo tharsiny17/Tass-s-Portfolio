@@ -8,6 +8,7 @@
 
 body {
 	background-image: url("background.jpg");
+	
     line-height: 1.6;
      color: #333;
     margin: 0;
@@ -23,7 +24,9 @@ header {
 
 header h1 {
     margin-bottom: 0.5rem;
+	background-color:hotpink;
     animation: fadeIn 2s ease-in-out; /* Animation for Header */
+	opaque:0.5;
 }
 
 nav a {
@@ -55,6 +58,7 @@ h2 {
     margin-bottom: 15px;
     color: purple;
     display: inline-block;
+	animation: slideIn 2s ease-out;
 }
 
 p, table, form {
@@ -142,6 +146,7 @@ img {
     height: auto;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	animation: fadeIn 2s ease-in-out;
 }
 
 /* Video Styling */
@@ -149,12 +154,15 @@ video {
     display: block;
     margin: 20px auto;
     width: 100%;
-	height:500px;
+	height:auto;
     max-width: 300px;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	overflow: hidden; 
+	animation: bounce 2s;
 }
+
 
 /* Footer Styling */
 footer {
@@ -168,10 +176,13 @@ footer {
 .resume-link {
   color: #FF5733; /* Change to your preferred color */
   text-decoration: none; /* Optional: Removes underline */
-  font-size: 16px; /* Optional: Adjust text size */
-}
+  font-size: 25px; /* Optional: Adjust text size */
+	font-weight:bold;
+	animation: colorChange 5s infinite;}
+
 .resume-link:hover {
   color: #2980b9; /* Hover effect color */
+	
 }
 
 
@@ -179,6 +190,11 @@ footer {
 @keyframes fadeIn {
     0% { opacity: 0; transform: translateY(-20px); }
     100% { opacity: 1; transform: translateY(0); }
+	0%   {background-color: orangered;}
+  25%  {background-color: mediumvioletred;}
+  50%  {background-color: midnightblue;}
+  100% {background-color: darkolivegreen;}
+	
 }
 
 /* Responsive Design */
@@ -196,4 +212,33 @@ footer {
     button {
         width: 100%;
     }
+
 }
+@keyframes slideIn {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-50px); }
+}
+@keyframes colorChange {
+      0% { color: red; }
+      25% { color: blue; }
+      50% { color: green; }
+      75% { color: orange; }
+      100% { color: red; }
+    }
+
+
+
+
+
+
